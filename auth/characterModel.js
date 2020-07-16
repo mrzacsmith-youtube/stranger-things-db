@@ -1,4 +1,5 @@
 const db = require('../database/dbConfig.js')
+const { dnsPrefetchControl } = require('helmet')
 
 module.exports = {
   add,
@@ -9,14 +10,27 @@ module.exports = {
   remove,
 }
 
-function add() {}
+async function add(character) {
+  const [id] = await db('characters').insert(character)
+  return findById(id)
+}
 
-function find() {}
+function find() {
+  return db('characters')
+}
 
-function findBy() {}
+function findBy(filter) {
+  return db('characters').where(filter)
+}
 
-function findById() {}
+function findById(id) {
+  return db('characters').where({ id }).first()
+}
 
-function update() {}
+function update(changes, id) {
+  return db('characters').where({ id }).update(changes)
+}
 
-function remove() {}
+function remove(id) {
+  return db('characters').where('id', Number(id)).del()
+}
