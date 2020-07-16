@@ -1,5 +1,4 @@
 const db = require('../database/dbConfig.js')
-const { dnsPrefetchControl } = require('helmet')
 
 module.exports = {
   add,
