@@ -9,5 +9,6 @@
 - sqlite3
 - cors
 - nodemon
+- dotenv
 
 Team build project
