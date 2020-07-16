@@ -1,18 +1,17 @@
 // Update with your config settings.
 
 module.exports = {
-
   development: {
     client: 'sqlite3',
     connection: {
-      filename: './database/things.db3'
+      filename: './database/things.db3',
     },
     migrations: {
-      directory: './database/migrations'
+      directory: './database/migrations',
     },
     seeds: {
-      directory: './database/seeds'
-    }
+      directory: './database/seeds',
+    },
   },
 
   // staging: {
@@ -45,6 +44,5 @@ module.exports = {
   //   migrations: {
   //     tableName: 'knex_migrations'
   //   }
-  }
-
-};
+  // }
+}
